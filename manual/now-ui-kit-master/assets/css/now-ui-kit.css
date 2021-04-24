@@ -29,6 +29,16 @@
   text-shadow: 0 0 0.2em #222, 0 0 0.2em #222,
         0 0 0.2em #222
 }
+.faixa{
+  background-color: var(--cor_principal);
+  color: #EEE;
+  min-height: 50vh;
+  padding-bottom: 5vh;
+}
+.lista{
+  font-size: 17px;
+}
+
 
 /* ========================================================================
  * bootstrap-switch - v3.3.2
@@ -3615,8 +3625,9 @@ p {
 .description,
 .card-description,
 .footer-big p {
-  color: #222;
-  font-weight: 300;
+  color: #444;
+  font-weight: 400;
+  margin-bottom: 3em;
 }
 
 .category {
@@ -3650,11 +3661,13 @@ p {
 }
 
 .blockquote {
+  margin-top: 5em;
   border-left: none;
   border: 1px solid #888888;
   padding: 20px;
   font-size: 1.1em;
   line-height: 1.8;
+  font-weight:bold;
 }
 
 .blockquote small {
@@ -5030,6 +5043,8 @@ img {
 
 .img-raised {
   box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+  padding-bottom: 2vh;
+  padding-right: 2vh;
 }
 
 .popover {
@@ -5439,12 +5454,13 @@ img {
 }
 
 .carousel .carousel-inner {
-  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.3);
+  box-shadow: 0px 10px 25px 0px rgba(0, 0, 0, 0.9);
   border-radius: 0.1875rem;
+  max-height: 400px;
 }
 
 .carousel .card {
-  max-width: 650px;
+  max-width: 450px;
   margin: 60px auto;
   display: block;
 }
@@ -5667,7 +5683,7 @@ img {
 }
 
 .landing-page .section-contact-us .description {
-  margin-bottom: 30px;
+  margin-bottom: 50px;
 }
 
 .landing-page .section-contact-us .input-group,
@@ -6097,7 +6113,7 @@ img {
 }
 
 .section-story-overview .image-container {
-  height: 335px;
+  height: 435px;
   position: relative;
   background-position: center center;
   background-size: cover;
@@ -6280,7 +6296,7 @@ img {
 }
 
 [data-background-color="orange"] {
-  background-color: #e95e38;
+  background-color: var(--cor_principal);
 }
 
 [data-background-color="black"] {
