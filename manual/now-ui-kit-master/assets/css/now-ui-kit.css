@@ -38,7 +38,9 @@
 .lista{
   font-size: 17px;
 }
-
+.espacoCima{
+  margin-top: 50px;
+}
 
 /* ========================================================================
  * bootstrap-switch - v3.3.2
