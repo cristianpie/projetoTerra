@@ -35,6 +35,12 @@
   <link href="../assets/css/now-ui-kit.css?v=1.3.0" rel="stylesheet" />
   <!-- CSS Just for demo purpose, don't include it in your project -->
   <link href="../assets/demo/demo.css" rel="stylesheet" />
+  <style type="text/css">
+    .imageDiv img{
+    position: absolute;
+    width: 1500px;
+    }
+  </style>
 </head>
 
 <body class="index-page sidebar-collapse">
@@ -106,7 +112,11 @@
           <div class="row">
             <div class="col-md-12">
               <div class="hero-images-container">
-                <img src="../assets/img/rov_montagem.png" />
+                <p id="scrollId" style="position: fixed; color:rgba(255, 99, 71, 0)"> </p>
+                <div class="imageDiv">
+                  <img src="../assets/img/AUV_index_2.png" id="img1">
+                  <img src="../assets/img/AUV_index_1.png" id="img2">
+                </div>
               </div>
             </div>
           </div>
@@ -153,9 +163,10 @@
               </div>
               
               <div class="tab-pane" id="contato" role="tabpanel">
-                <li><b>Email: <a href = "mailto: equipeterra@example.com">equipeterra@example.com</a></b></li>
-                <li><b>Facebook: <a href = "mailto: equipeterra@example.com">equipeterra@example.com</a></b></li>
-                <li><b>Instagram: <a href = "https://www.instagram.com/terracompetition/">@terracompetition</a></b></li> 
+                <li><b>Email: <a href = "mailto: terra.ufsc@gmail.com">terra.ufsc@gmail.com</a></b></li>
+                <li><b>Facebook: <a href = "https://www.facebook.com/terracompetitionteam/">/terracompetitionteam</a></b></li>
+                <li><b>Instagram: <a href = "https://www.instagram.com/terracompetition/">@terracompetition</a></b></li>
+                <div class = "space-50"></div> 
               </div>
             </div>
           </div>
@@ -363,7 +374,57 @@
         }, 1000);
       }
     }
+
+
+    $(window).on('scroll', function(){
+    
+
+
+      var s = $(window).scrollTop(),
+      d = $(document).height(),
+      c = $(window).height();
+      
+      var scrollPercent = (s / (d - c)) * 100;
+      document.getElementById('scrollId').innerHTML = scrollPercent;
+      console.log(scrollPercent); //Displaying scroll percentage in console
+      
+      if(window.matchMedia("(max-width: 767px)").matches){
+          // The viewport is less than 768 pixels wide
+          //alert("This is a mobile device.");
+      
+          if(scrollPercent < 5){
+          document.getElementById('img1').style.display = "none";
+          document.getElementById('img2').style.display = "block";
+          }
+          else if(scrollPercent > 5 && scrollPercent < 11){
+          document.getElementById('img1').style.display = "block";
+          document.getElementById('img2').style.display = "block";
+          }
+          else if(scrollPercent > 11 && scrollPercent < 30){
+          document.getElementById('img1').style.display = "block";
+          document.getElementById('img2').style.display = "none";
+          }
+      } else{
+          // The viewport is at least 768 pixels wide
+          //alert("This is a tablet or desktop.");
+      
+          if(scrollPercent < 13){
+          document.getElementById('img1').style.display = "none";
+          document.getElementById('img2').style.display = "block";
+
+          }
+          else if(scrollPercent > 13 && scrollPercent < 19){
+          document.getElementById('img1').style.display = "block";
+          document.getElementById('img2').style.display = "block";
+          }
+          else if(scrollPercent > 19 && scrollPercent < 30){
+          document.getElementById('img1').style.display = "block";
+          document.getElementById('img2').style.display = "none";
+          }
+        }
+    })
   </script>
+  
 </body>
 
 </html>
