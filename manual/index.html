@@ -1,1 +1,66 @@
-<h2>Em constru&ccedil;&atilde;o!</h2>
+<!DOCTYPE html>
+<html>
+
+<head>
+	<meta charset="utf-8" />
+	<title>
+		Change image dynamically
+		when user scrolls
+	</title>
+	<style type="text/css">
+        html{
+        height:100%;
+        }
+        body{
+        height:1000%;   
+        }
+        .imageDiv img{
+        position: absolute;
+        width: 800px;
+        }
+         
+        /*p{
+        position: fixed;
+        margin-bottom: 2%;
+        }*/
+    </style>
+</head>
+
+<body>
+	<p id="scrollId"> </p> //This Paragraph is to Display Scroll Percentage.
+    
+    <br> <br> //Line Brakes
+    <div class="imageDiv">
+    <img src="full.png" id="img1">
+    <img src="img2.PNG" id="img2">
+    </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+ 
+<script type="text/javascript">
+$(window).on('scroll', function(){
+var s = $(window).scrollTop(),
+d = $(document).height(),
+c = $(window).height();
+ 
+var scrollPercent = (s / (d - c)) * 100;
+document.getElementById('scrollId').innerHTML = scrollPercent;
+console.log(scrollPercent); //Displaying scroll percentage in console
+ 
+if(scrollPercent < 1){
+    document.getElementById('img1').style.display = "none";
+    document.getElementById('img2').style.display = "block";
+
+}
+else if(scrollPercent > 1 && scrollPercent < 2){
+    document.getElementById('img1').style.display = "block";
+    document.getElementById('img2').style.display = "block";
+}
+else if(scrollPercent > 2 && scrollPercent < 30){
+    document.getElementById('img1').style.display = "block";
+    document.getElementById('img2').style.display = "none";
+}
+ 
+})
+</script>
+</html>
