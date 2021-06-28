@@ -114,8 +114,9 @@
               <div class="hero-images-container">
                 <p id="scrollId" style="position: fixed; color:rgba(255, 99, 71, 0)"> </p>
                 <div class="imageDiv">
-                  <img src="../assets/img/AUV_index_2.png" id="img1">
-                  <img src="../assets/img/AUV_index_1.png" id="img2">
+                  <img src="../assets/img/index_AUV_0.png" id="img1">
+                  <img src="../assets/img/index_AUV_1.png" id="img2">
+                  <img src="../assets/img/index_AUV_2.png" id="img3">
                 </div>
               </div>
             </div>
@@ -285,17 +286,14 @@
           </div>
         </div>
       </div>
-      <div class="row faixaazul">
-        <div class="space-100"></div>
-        <div class="col-md-1"></div>
-        <div class="col-md-5">
-          <iframe width="560" height="315" src="https://www.youtube.com/embed/4aaPZ80Yo4s" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-        </div>
-        <div class="col-md-4">
-          <p class="justificado">Explore um pouco mais sobre AUV's aqui.</p>
+      <div class="faixaazul">
+        <div class="space-50"></div>
+        <div class="row">
+          <div class="col-md-8 ml-auto mr-auto text-center">
+            <iframe width="560" height="315" src="https://www.youtube.com/embed/45WQnONYArc" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+          </div>
         </div>
       </div>
-    
       <div class="space-50"></div>
       <div class="container">
         <div class="row">
@@ -393,33 +391,39 @@
           //alert("This is a mobile device.");
       
           if(scrollPercent < 5){
-          document.getElementById('img1').style.display = "none";
-          document.getElementById('img2').style.display = "block";
+            document.getElementById('img1').style.display = "block";
+            document.getElementById('img2').style.display = "none";
+            document.getElementById('img3').style.display = "none";
           }
-          else if(scrollPercent > 5 && scrollPercent < 11){
-          document.getElementById('img1').style.display = "block";
-          document.getElementById('img2').style.display = "block";
+          else if(scrollPercent > 5 && scrollPercent < 9){
+            document.getElementById('img1').style.display = "none";
+            document.getElementById('img2').style.display = "block";
+            document.getElementById('img3').style.display = "none";
           }
-          else if(scrollPercent > 11 && scrollPercent < 30){
-          document.getElementById('img1').style.display = "block";
-          document.getElementById('img2').style.display = "none";
+          else if(scrollPercent > 9 && scrollPercent < 30){
+            document.getElementById('img1').style.display = "none";
+            document.getElementById('img2').style.display = "none";
+            document.getElementById('img3').style.display = "block";
           }
       } else{
           // The viewport is at least 768 pixels wide
           //alert("This is a tablet or desktop.");
       
           if(scrollPercent < 13){
-          document.getElementById('img1').style.display = "none";
-          document.getElementById('img2').style.display = "block";
-
-          }
-          else if(scrollPercent > 13 && scrollPercent < 19){
-          document.getElementById('img1').style.display = "block";
-          document.getElementById('img2').style.display = "block";
-          }
-          else if(scrollPercent > 19 && scrollPercent < 30){
           document.getElementById('img1').style.display = "block";
           document.getElementById('img2').style.display = "none";
+          document.getElementById('img3').style.display = "none";
+
+          }
+          else if(scrollPercent > 13 && scrollPercent < 20){
+          document.getElementById('img1').style.display = "none";
+          document.getElementById('img2').style.display = "block";
+          document.getElementById('img3').style.display = "none";
+          }
+          else if(scrollPercent > 20 && scrollPercent < 30){
+          document.getElementById('img1').style.display = "none";
+          document.getElementById('img2').style.display = "none";
+          document.getElementById('img3').style.display = "block";
           }
         }
     })
